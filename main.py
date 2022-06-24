@@ -2,11 +2,9 @@ from gui import *
 from tkinter import filedialog
 
 def openfile() -> str:
-    print("checkpoint")
     return filedialog.askdirectory()
 
 def restart_game(game: int, path: str) -> None:
-    print("checkpoint")
     with open(path + "/data/user.data", "r") as f:
         lines = f.readlines()
     
@@ -15,6 +13,8 @@ def restart_game(game: int, path: str) -> None:
     with open(path + "/data/user.data", "w") as f:
         f.writelines(lines)
 
-initModules()
-while isRunning():
-    run()
+
+if __name__ == '__main__':
+    initModules()
+    while isRunning():
+        run()
