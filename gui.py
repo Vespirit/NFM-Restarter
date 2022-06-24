@@ -43,6 +43,8 @@ def runopenfile(argument):
   if not(__name__ == '__main__'):
     init = True
     from main import openfile
+    gui.success1.config(text = "")
+    gui.success2.config(text = "")
     folder = openfile()
     gui.path.delete(0,END)
     gui.path.insert(0,folder)
